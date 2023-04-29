@@ -13,7 +13,7 @@ import {ClientsModule, Transport} from '@nestjs/microservices';
         options: {
           client: {
             clientId: 'any_client_id_i_want',
-            brokers: ['104.198.153.245:29092'],
+            brokers: [process.env.KAFKA_BROKER],
           },
           consumer: {
             groupId: 'an_unique_string_id',
@@ -22,6 +22,7 @@ import {ClientsModule, Transport} from '@nestjs/microservices';
       },
     ]),
   ],
+  //104.198.153.245:29092
   controllers: [AppController],
   providers: [AppService],
 })
